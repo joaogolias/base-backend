@@ -1,0 +1,21 @@
+# package directories (we'll be using yarn for this project)
+node_modules
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# build directories and files
+.webpack
+resources/resources.yml
+resources/constants.yml
+resources/scalling.yml
+
+# serverless directories
+.serverless
+
+# ide and editor directories
+.vscode
+.idea
+
+# macOS specific files
+.DS_Store

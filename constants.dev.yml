@@ -1,0 +1,6 @@
+PROJECT_NAME: api-provedores-dev
+DOMAIN_NAME: api-provedores-dev.hub.com
+VERSION: 1
+CERTIFICATE_NAME: '*.hub.com'
+ENV:
+  env: ${self:provider.stage}

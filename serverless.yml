@@ -1,0 +1,46 @@
+service: ${self:custom.constants.PROJECT_NAME}-service
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-prune-plugin
+  - serverless-domain-manager
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  apiKeys:
+    - mobile
+  stage: ${opt:stage, self:custom.defaultStage}
+  environment: ${self:custom.constants.ENV}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - cognito-idp:*
+        - dynamodb:*
+      Resource: "*"
+
+custom:
+  defaultStage: dev
+  constants: ${file(./constants.${self:provider.stage}.yml)}
+  webpack:
+      includeModules: false
+      webpackConfig: ./webpack.${self:provider.stage}.config.js
+  prune:
+    automatic: true
+    number: 1
+#    UNCOMMENT FOR PROD DEPLOYING - REMEMBER TO SET THE CONSTANTS
+#  customDomain:
+#    domainName: ${self:custom.constants.DOMAIN_NAME}
+#    basePath: v${self:custom.constants.VERSION}
+#    certificateName: ${self:custom.constants.CERTIFICATE_NAME}
+#    createRoute53Record: true
+#    endpointType: 'edge'
+
+functions:
+  serviceExampleHandler:
+    handler: src/serviceExample/serviceExampleHandler.handler
+    events:
+      - http:
+          method: any
+          path: serviceExample/{service}/{functionType}

@@ -1,0 +1,38 @@
+{
+  "name": "base-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaogolias/base-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaogolias/base-backend/issues"
+  },
+  "homepage": "https://github.com/joaogolias/base-backend#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.1",
+    "@types/aws-sdk": "2.7.0",
+    "@types/axios": "^0.14.0",
+    "@types/node": "8.0.57",
+    "aws-sdk": "2.277.1",
+    "class-validator": "0.9.1",
+    "serverless": "1.30.1",
+    "serverless-domain-manager": "^2.6.0",
+    "serverless-offline": "^3.31.3",
+    "serverless-prune-plugin": "^1.3.2",
+    "serverless-stack-output": "0.2.3",
+    "serverless-webpack": "5.1.1",
+    "ts-loader": "4.2.0",
+    "ts-node": "7.0.0",
+    "tslint": "5.11.0",
+    "typescript": "2.9.2",
+    "webpack": "4.5.0"
+  },
+  "scripts": {
+    "start:dev": "sls offline -s dev"
+  }
+}
