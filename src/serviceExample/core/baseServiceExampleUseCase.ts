@@ -1,4 +1,4 @@
-export class ServiceExampleUseCase {
+export class BaseServiceExampleUseCase {
     public getItem<Input, Output>(input: Input): Promise<Output> {
         throw new Error('Function not implemented')
     }

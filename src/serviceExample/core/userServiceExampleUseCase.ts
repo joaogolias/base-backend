@@ -1,6 +1,6 @@
-import {ServiceExampleUseCase} from './serviceExampleUseCase';
+import {BaseServiceExampleUseCase} from './baseServiceExampleUseCase';
 
-export class UserServiceExampleUseCase extends ServiceExampleUseCase {
+export class UserServiceExampleUseCase extends BaseServiceExampleUseCase {
     public async getItem(input: any): Promise<any> {
         return {
             id: "id",

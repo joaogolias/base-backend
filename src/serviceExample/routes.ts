@@ -1,7 +1,7 @@
 import {Route} from '../models';
-import {ServiceExampleUseCase} from './core/serviceExampleUseCase';
+import {BaseServiceExampleUseCase} from './core/baseServiceExampleUseCase';
 
-export const ServiceExampleRoutes: { [index: string]: Route<ServiceExampleUseCase> }  = {
+export const ServiceExampleRoutes: { [index: string]: Route<BaseServiceExampleUseCase> }  = {
     GetItem: {
         path: 'get-item',
         method: 'GET',
